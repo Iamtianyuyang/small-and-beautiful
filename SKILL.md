@@ -1,7 +1,7 @@
 ---
 name: small-and-beautiful
 description: Small-and-beautiful product principles for personal apps and tools. Use for scoping, UI/UX, copy, dependencies, and product review.
-version: 1.0.0
+version: 1.1.0
 metadata:
   author: "tianyy <Iamtianyuyang@users.noreply.github.com>"
   tags: [design, ui, product, chinese-typography]
@@ -22,7 +22,9 @@ For lightweight products built for individuals: mobile apps, small tools, landin
 | Feature budget (≤3) | Count by role, not by feature; one primary workflow per role |
 | Body 15–17, generous whitespace | Lists 13–14, row height 32–40; whitespace only between blocks |
 | No dividers | 1-unit dividers allowed; remove vertical rules and card borders |
-| Touch 44×44 | Mouse-only can go to 24×24; mixed input follows touch |
+| Touch 44×44 | Mouse-only: 24×24 only for low-frequency secondary icons; high-frequency controls ≥32×32; mixed input follows touch |
+
+For multi-user dense tools: handle concurrent edits with an optimistic 409 conflict, and mask PII (phone, address) in list rows.
 
 ## Three influences
 
@@ -40,7 +42,7 @@ For lightweight products built for individuals: mobile apps, small tools, landin
 4. **Light**: small bundle, fast launch, few dependencies. Use native platform capabilities before adding a framework; every dependency needs a reason.
 5. **Restrained visuals**: one accent color, a neutral gray scale, generous whitespace. Hierarchy through type size and weight; use color and lines sparingly.
 6. **Text is the interface**: treat Chinese typography seriously (see defaults below).
-7. **Every action responds**: press states, progress, confirmation. Motion should feel physical. Prefer undo over confirmation dialogs.
+7. **Every action responds**: press states, progress, confirmation. Motion should feel physical. Prefer undo over confirmation dialogs for reversible local actions; for batch actions with external side effects (shipping, refunds, messages), confirm with count and impact — undo alone is not enough.
 8. **Warm details**: empty, error, loading, and completion states reveal personality. Copy should sound human; one or two easter eggs are allowed.
 9. **Respect the user**: no ads, no dark patterns, no unnecessary permissions, no pointless tracking. If a permission is truly needed, expose a switch in the UI and keep the feature usable when denied. Data belongs to the user: local-first, exportable at any time.
 10. **Polish the last 1%**: run the [checklist](references/checklist.md) and [self-check](references/self-check.md) before release. Better to ship one feature less than one rough edge.

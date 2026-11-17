@@ -29,7 +29,7 @@ Go through every item; fix anything that fails before shipping.
 - [ ] Every tappable element has a pressed state and a disabled state
 - [ ] Long operations show progress; completion is confirmed
 - [ ] Every write action can be undone in place (at least the last one), without hunting through settings
-- [ ] Destructive actions support undo or at least a second confirmation
+- [ ] Destructive actions support undo; batch actions with external side effects require a confirmation showing count and impact
 - [ ] Where a permission is requested, the UI has a switch for it and the feature still works when denied
 - [ ] Motion is 150–300 ms, direction is logical, and "reduce motion" is respected
 - [ ] Keyboard usable (desktop/web); touch targets ≥ 44×44 (mobile)
