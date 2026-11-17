@@ -1,86 +1,121 @@
 ---
 name: small-and-beautiful
-description: 小而美软件准则，融合苹果、锤子（Smartisan）、魅族（Flyme）的产品哲学。在开始任何新项目（应用、工具、网站、脚本 UI）、规划要做或要砍的功能、设计界面/交互/动效、写界面文案、做技术选型，或评审打磨一个产品时使用。Use when starting a new app/tool/site, scoping features, designing UI, writing UI copy, picking dependencies, or reviewing/polishing a product.
+description: Small-and-beautiful product principles for personal apps and tools. Use for scoping, UI/UX, copy, dependencies, and product review.
+version: 1.0.0
+metadata:
+  author: "tianyy <Iamtianyuyang@users.noreply.github.com>"
+  tags: [design, ui, product, chinese-typography]
 ---
 
-# 小而美 · 软件准则
+# Small and Beautiful · Software Principles
 
-> 一句话：**只做一件事，把它做到让人忍不住截图分享。**
+> One sentence: **Do one thing, and make it so good people can't resist screenshotting it.**
 
-## 三个灵感来源，各取所长
+## Scope (read this first)
 
-| 来源 | 取什么 |
+For lightweight products built for individuals: mobile apps, small tools, landing pages, content sites.
+
+**Partially inapplicable**: back-office systems, data-dense tools, multi-user collaboration products. These still use the ten principles, but the four defaults below should be adjusted for dense interfaces; when you adjust one, state which one and why:
+
+| Principle | Default on dense interfaces |
 |---|---|
-| **苹果** | 聚焦与克制：对一千件事说"不"。清晰比装饰重要。用户看不见的地方也要做好。整体感：每个部分都像出自同一双手。 |
-| **锤子** | 工匠精神与人文温度：对中文排版的执念；有质感的图标；有趣、有态度的小功能（如便签生成精美长图、大爆炸分词、闪念胶囊）。"漂亮"本身就是功能。 |
-| **魅族** | 轻、简、安静：mBack 那样一个按键解决问题的极简交互；大量留白；清爽不打扰；只专注少数几个产品。 |
+| Feature budget (≤3) | Count by role, not by feature; one primary workflow per role |
+| Body 15–17, generous whitespace | Lists 13–14, row height 32–40; whitespace only between blocks |
+| No dividers | 1-unit dividers allowed; remove vertical rules and card borders |
+| Touch 44×44 | Mouse-only can go to 24×24; mixed input follows touch |
 
-## 十条原则
+## Three influences
 
-1. **一件事**：能用一句话说清楚它做什么。说不清，就是做大了。
-2. **功能预算**：v1 最多 3 个核心功能。要加一个，先想想删哪个。设置项能不加就不加，好的默认值胜过选项。
-3. **打开即用**：不强制注册，没有引导轮播，没有弹窗。第一屏就是工作区。
-4. **轻**：体积小、启动快、依赖少。平台原生能做的就不引框架，每个依赖都要说得出理由。
-5. **克制的视觉**：一个强调色，配中性灰阶，多留白。层级靠字号和字重，少用颜色和线条。
-6. **文字是界面的主角**：认真对待中文排版（见下方规范）。
-7. **每个操作都有回应**：点击有状态变化，过程有进度，结果有确认。动效要有物理感。能撤销就不弹确认框。
-8. **有温度的细节**：空状态、错误、加载、完成，这些时刻最能体现性格。文案像人说话，可以藏一两个彩蛋。
-9. **尊重用户**：无广告、无诱导设计、不要多余权限、不做无谓追踪。数据属于用户：本地优先，随时可导出。
-10. **打磨最后 1%**：发布前过一遍[检查清单](references/checklist.md)。宁可少一个功能，也不留一处粗糙。
+| Source | What to take |
+|---|---|
+| **Apple** | Focus and restraint: say no to a thousand things. Clarity over decoration. Do the invisible parts well. Wholeness: every part looks like it came from the same hands. |
+| **Smartisan** | Craft and human warmth: obsession with Chinese typography; tactile icons; small features with attitude (notes exported as beautiful long images, Big Bang word splitting, Idea Pills). "Beautiful" is itself a feature. |
+| **Meizu** | Light, simple, quiet: one button that solves everything, like mBack; generous whitespace; calm and unobtrusive; focus on a few products. |
 
-## 默认规范（项目可覆盖）
+## Ten principles
 
-### 布局与间距
-- 8pt 网格，细节处可用 4pt；页边距 16–24px。
-- 圆角统一用一套（如 8 / 12 / 20），嵌套时外圆角 = 内圆角 + 间距。
-- 触控目标不小于 44×44。
-- 能用留白分组，就别用分割线和边框。
+1. **One thing**: describe what it does in one sentence. If you can't, it's too big.
+2. **Feature budget**: at most 3 core features in v1. To add one, decide what to remove. Avoid settings; good defaults beat options.
+3. **Open and usable**: no forced sign-up, no onboarding carousel, no pop-ups. The first screen is the workspace.
+4. **Light**: small bundle, fast launch, few dependencies. Use native platform capabilities before adding a framework; every dependency needs a reason.
+5. **Restrained visuals**: one accent color, a neutral gray scale, generous whitespace. Hierarchy through type size and weight; use color and lines sparingly.
+6. **Text is the interface**: treat Chinese typography seriously (see defaults below).
+7. **Every action responds**: press states, progress, confirmation. Motion should feel physical. Prefer undo over confirmation dialogs.
+8. **Warm details**: empty, error, loading, and completion states reveal personality. Copy should sound human; one or two easter eggs are allowed.
+9. **Respect the user**: no ads, no dark patterns, no unnecessary permissions, no pointless tracking. If a permission is truly needed, expose a switch in the UI and keep the feature usable when denied. Data belongs to the user: local-first, exportable at any time.
+10. **Polish the last 1%**: run the [checklist](references/checklist.md) and [self-check](references/self-check.md) before release. Better to ship one feature less than one rough edge.
 
-### 色彩
-- 浅色：背景 `#FFFFFF` / `#F7F7F8`；文字主 `#1A1A1A`、次 `#666`、辅助 `#999`。
-- 强调色只用一个，只用在主操作和选中态上。
-- 深色模式不是简单反色：背景用 `#121212` 一档，适当降低强调色饱和度。
+## Defaults (project may override)
 
-### 字体与中文排版
-- 字体栈：`-apple-system, "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Noto Sans SC", "Microsoft YaHei", sans-serif`。
-- 正文 15–17px，行高 1.6–1.75，段间距大于行间距；每行不超过约 35–40 个汉字。
-- 中文与英文、数字之间加空格；中文语境用全角标点；不要用两端对齐撑出大空隙。
-- 标题字重 600 左右，别动不动就粗黑。
+> Units: native uses pt (dp on Android), web uses px; values below apply to both unless stated otherwise.
 
-### 动效
-- 时长 150–300ms；进入用 ease-out，拖拽和手势用弹簧曲线。
-- 方向有逻辑：从哪里来，就回到哪里去。
-- 动效是为了解释状态变化，不是为了炫技；遵守系统的"减少动态效果"设置。
+### Layout and spacing
+- Use an 8-step grid; 4 is allowed for details. Page margins 16–24.
+- Use one corner-radius set (e.g. 8 / 12 / 20); nested corners: outer = inner + spacing. Exception: skeuomorphic motifs (cups, physical objects, illustrations) may use a second set, but no more than two sets per app, and both must be documented.
+- Touch targets at least 44×44; mouse-only can go to 24×24; mixed input follows touch.
+- Group with whitespace before reaching for dividers or borders.
 
-### 图标
-- 全局一套风格（线性就统一描边宽度，面性就统一面性），不混用。
-- App 图标可以有锤子式的质感；界面内图标保持简洁。
+### Color
+- Light: background `#FFFFFF` / `#F7F7F8`; primary text `#1A1A1A`, secondary `#666`, tertiary `#999`.
+- One accent color only; use it only for primary actions and selected states.
+- Dark mode is not a simple inversion: use `#121212` for the background and lower accent saturation.
+- Contrast: body text vs background ≥ 4.5:1; large text and icons ≥ 3:1. Verify dark mode against the same thresholds.
 
-### 文案
-- 按钮用动词："保存""删除照片"，不用"确定""好的"。
-- 错误提示 = 发生了什么 + 怎么办，不责怪用户，不甩错误码。
-- 空状态 = 一句有温度的话 + 一个明确动作。
+### Typography and Chinese typesetting
+- Font stack: `-apple-system, "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Noto Sans SC", "Microsoft YaHei", sans-serif`.
+- Body 15–17, line height 1.6–1.75, paragraph spacing greater than line spacing; keep lines to roughly 35–40 Chinese characters. Dense lists may go to 13–14, but detail pages, long text, and forms return to 15–17.
+- Add a space between Chinese and Latin text or numerals; use full-width punctuation in Chinese; never justify Chinese text into wide gaps.
+- Heading weight around 600; don't reach for heavy black by default.
 
-### 工程
-- 性能预算：交互响应 < 100ms；冷启动 < 1s；Web 首屏 JS < 150KB（gzip 后）。
-- 代码少而清晰，能删则删；依赖新增要说明理由。
-- 离线可用，本地存储优先，支持数据导出。
+### Motion
+- Duration 150–300 ms; ease-out for entrances, spring curves for drag and gestures.
+- Direction should make sense: come from where it belongs, return where it came from.
+- Motion explains state changes, not decoration. Respect the system "reduce motion" setting.
+- Easter eggs and decorative motion only at low-frequency moments (first completion, goal reached, empty state). In a spec, give amplitude, period, and trigger conditions; never write "wiggle it a bit".
 
-## 工作流程
+### Icons
+- One style across the app: consistent stroke width for line icons, consistent fill for solid icons; don't mix.
+- App icons may have Smartisan-like texture; in-app icons stay simple.
 
-**开始新项目时：**
-1. 写出一句话定义，再写一份"不做什么"清单。
-2. 列出核心功能，不超过 3 个。
-3. 选能满足需求的最轻技术栈。
-4. 先做最核心的那一屏，打磨满意了再扩展。
-5. 发布前跑一遍[检查清单](references/checklist.md)。
+### Copy
+- Buttons use verbs: "Save", "Delete photo" — not "OK", "Confirm". In Chinese UI, use 保存 / 删除照片, not 确定 / 好的.
+- Errors = what happened + what to do next. Never blame the user; never show a bare error code.
+- Empty state = one warm sentence + one clear action.
 
-**评审或打磨现有产品时：**
-- 按十条原则逐条给出 ✓ / △ / ✗，每个 △ 和 ✗ 都配具体改法。
-- 改进建议优先"删"和"简化"，其次才是"加"。
+### Engineering
+- Performance budget: interaction response < 100 ms; cold start < 1 s; first-load JS < 150 KB (gzipped).
+- Code should be small and clear; delete what you can. Every new dependency needs a reason.
+- Work offline; prefer local storage; support data export.
 
-## 拿不准的时候，问自己三个问题
+## Instructions
 
-- **苹果式**：这个能删掉吗？
-- **锤子式**：用户用到这里，会会心一笑吗？
-- **魅族式**：这里能再轻一点、再安静一点吗？
+**Starting a new project**
+1. Write a one-sentence definition, then a "what we won't do" list.
+2. List the core features; no more than 3.
+3. Choose the lightest stack that meets the need.
+4. Build the core screen first: write a one-page design spec (grid, color, type, motion, state copy), then build it and polish before expanding.
+5. Before release, run the [checklist](references/checklist.md) and [self-check](references/self-check.md).
+
+**Reviewing or polishing an existing product**
+- Judge first, then cite a principle: every recommendation states the judgment and reason for this product, not a restatement of a principle ("good defaults beat options" is not a reason; "this setting is changed once a week, and a 2000 default covers 95% of people" is).
+- Go through the ten principles with ✓ / △ / ✗; every △ and ✗ gets a concrete fix.
+- Prefer "remove" and "simplify" before "add".
+- Finish with a consistency self-check: each rule is defined once, no recommendation contradicts another, and a cut feature does not reappear later as a risk or easter egg.
+
+## Examples
+
+**Reviewing a settings page**
+
+A user asks for a "reminder time" setting. Judgment: it is changed once a week; a 10:00 default covers most people; adding it requires a new page. Recommendation: cut the setting, default to 10:00, and let people long-press the time to edit it in place.
+
+| Scenario | What to do |
+|---|---|
+| Starting a new project | One-sentence definition: "Only tracks how many glasses of water you drank today." Won't do: reminders, charts, social. Core feature: "Tap once to log a glass." |
+| Writing button copy | Use verbs: "Save", "Delete photo", not "OK", "Confirm". In Chinese UI: 保存 / 删除照片, not 确定 / 好的. For errors, say what happened, then what to do. |
+| Choosing a dependency | If the platform can do it, don't add a framework. If you add one, state how much code it replaces and what it buys you. |
+
+## When in doubt, ask three questions
+
+- **Apple**: can this be removed?
+- **Smartisan**: will the user smile when they get here?
+- **Meizu**: can this be lighter and quieter?
