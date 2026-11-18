@@ -7,7 +7,7 @@ metadata:
   tags: [grid, layout, responsive, design]
 ---
 
-# SAB Grid Design — responsive 12-column layout
+# SAB Grid Design: responsive 12-column layout
 
 ## Purpose
 
@@ -19,8 +19,10 @@ The rules come from the grid-design convention: 12 columns, four device canvases
 
 - Laying out a new page or screen, or converting a fixed-width design into a responsive layout.
 - Deciding breakpoints, container widths, column spans, gutters, or margins.
-- A layout "feels off" and you need to find where it leaves the grid.
+- A layout "feels off" and you suspect column alignment, widths, or breakpoints (not type, color, or spacing rhythm).
 - Specifying a design so an implementer can reproduce it at every size.
+
+Typical requests: "lay out this settings page on our 12-column grid", "the pricing row doesn't line up at 940 px", "make this page responsive without adding breakpoints", "check this screenshot for off-grid blocks".
 
 **Not for:** brand identity, typography scale, color systems, motion, or component styling that does not affect layout width. For overall UI polish use `sab-ui-craft`.
 
@@ -55,7 +57,18 @@ Use the project's widths if they exist. Otherwise use the grid-design convention
 | Desktop | 940 px | 940 px | 12 |
 | Large desktop | 1140 px | 1140 px | 12 |
 
-These are **design canvases**, matching the PSD templates. CSS media-query values may round to the nearest common breakpoint; state the mapping you use and keep it consistent. If the project has no gutter or margin tokens, choose one gutter and one page margin, write them down, and reuse them everywhere.
+These are **design canvases**, matching the PSD templates. CSS media-query values may round to the nearest common breakpoint; state the mapping you use and keep it consistent.
+
+If the project has no grid tokens, define these four once and reuse them everywhere (keep the project's names if it has them):
+
+| Token | Meaning |
+| --- | --- |
+| `columns` | 12 |
+| `gutter` | one gap value, used between every pair of columns |
+| `page-margin` | one outer margin per device class |
+| `container-max` | the canvas width at which the container stops growing |
+
+Record the values you choose in the output.
 
 ### 2. Assign spans by content priority
 
@@ -102,7 +115,7 @@ For each target width, check:
 - The layout still holds with long text, empty lists, and error messages.
 - Browser zoom and narrow windows do not collapse the grid.
 
-If you cannot run or screenshot the page, say which checks are unverified. Do not claim "responsive" from source alone.
+To check, open the page at each canvas width (DevTools device mode or Playwright) and compare computed block widths with the column math. With no browser, inspect the shared grid/container CSS and mark visual checks unverified. Do not claim "responsive" from source alone.
 
 ## Output format
 
@@ -129,6 +142,10 @@ If you cannot run or screenshot the page, say which checks are unverified. Do no
 **Span change instead of a second layout**
 
 > The dashboard uses 12/12 on the phone, 6/6 on the tablet, 8+4 on desktop, and 9+3 on large desktop. The sidebar is the same component at every width; only its span changes.
+
+**From a request to a plan**
+
+> "The dashboard is a fixed 1200 px page; make it responsive." → Keep 1140 px as `container-max`, with 940 desktop, 720 tablet, and 375 phone; main column 12/6/8/9 and sidebar 12/6/4/3, every row summing to 12; verify at all four widths and list what you could not inspect.
 
 **Retina**
 
