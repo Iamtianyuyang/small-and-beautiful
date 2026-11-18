@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workspace settings</title>
+<link rel="stylesheet" href="grid.css">
+<style>
+  :root { --ink:#18202f; --muted:#5f6b80; --line:#e4e8ef; --accent:#2f6fed; }
+  body { margin:0; background:#f4f6fa; color:var(--ink); font:15px/1.5 system-ui, -apple-system, sans-serif; }
+
+  .page { display:flex; gap:24px; width:960px; margin:0 auto; padding:32px 16px; }
+
+  .sidebar { width:280px; align-self:flex-start; padding:18px; background:#fff; border:1px solid var(--line); border-radius:10px; }
+  .sidebar h2 { margin:0 0 12px; font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .sidebar nav { display:flex; flex-direction:column; gap:6px; }
+  .sidebar a { padding:8px 10px; border-radius:8px; color:var(--muted); text-decoration:none; font-size:14px; }
+  .sidebar a.is-active { background:#eef3ff; color:var(--accent); }
+
+  .main { width:640px; padding:24px; background:#fff; border:1px solid var(--line); border-radius:10px; }
+  .main h1 { margin:0 0 6px; font-size:24px; }
+  .main .lead { margin:0 0 24px; color:var(--muted); }
+
+  .section { display:flex; gap:16px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+  .section:last-of-type { border-bottom:0; }
+  .field { width:300px; }
+  .field label { display:block; margin-bottom:6px; font-size:13px; font-weight:600; }
+  .field input,
+  .field select { width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; }
+  .field p { margin:6px 0 0; color:var(--muted); font-size:13px; }
+
+  .actions { display:flex; gap:12px; }
+  .actions button { padding:9px 16px; border:0; border-radius:8px; font:inherit; background:var(--accent); color:#fff; }
+  .actions .ghost { background:#fff; color:var(--muted); border:1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="page">
+  <aside class="sidebar">
+    <h2>Settings</h2>
+    <nav>
+      <a class="is-active" href="#">General</a>
+      <a href="#">Members</a>
+      <a href="#">Billing</a>
+      <a href="#">Integrations</a>
+      <a href="#">Audit log</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <h1>Workspace settings</h1>
+    <p class="lead">General preferences for the Northwind workspace.</p>
+
+    <div class="section">
+      <div class="field">
+        <label for="workspace-name">Workspace name</label>
+        <input id="workspace-name" value="Northwind Analytics">
+      </div>
+      <div class="field">
+        <label for="workspace-slug">URL slug</label>
+        <input id="workspace-slug" value="northwind">
+        <p>Used in dashboard links; changing it breaks old bookmarks.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="field">
+        <label for="timezone">Timezone</label>
+        <select id="timezone">
+          <option>UTC</option>
+          <option selected>Europe/Berlin</option>
+          <option>America/New_York</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="locale">Locale</label>
+        <select id="locale">
+          <option selected>English (US)</option>
+          <option>Deutsch</option>
+          <option>日本語</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="field">
+        <label for="retention">Data retention</label>
+        <select id="retention">
+          <option>90 days</option>
+          <option selected>12 months</option>
+          <option>3 years</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="export-format">Default export format</label>
+        <select id="export-format">
+          <option selected>CSV</option>
+          <option>JSON</option>
+          <option>Parquet</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="field">
+        <label for="alert-email">Alert email</label>
+        <input id="alert-email" type="email" value="ops@northwind.example">
+      </div>
+      <div class="field">
+        <label for="alert-threshold">Alert threshold</label>
+        <input id="alert-threshold" type="number" value="4">
+        <p>Open incidents before the workspace escalates.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Save changes</button>
+      <button type="button" class="ghost">Discard</button>
+    </div>
+  </main>
+</div>
+</body>
+</html>

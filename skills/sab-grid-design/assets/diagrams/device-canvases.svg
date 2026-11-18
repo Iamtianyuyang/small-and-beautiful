@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+<rect width="1000" height="300" fill="#ffffff"/>
+<text x="120" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#2f2a3a" font-weight="600">Phone</text>
+<text x="120" y="60" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6b6577">750 px</text>
+<rect x="88" y="85" width="64" height="120" rx="8" fill="none" stroke="#6b5b95" stroke-width="3"/>
+<line x1="100" y1="95" x2="140" y2="95" stroke="#6b5b95" stroke-width="2"/>
+<circle cx="120" cy="196" r="4" fill="#6b5b95"/>
+<text x="370" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#2f2a3a" font-weight="600">Tablet</text>
+<text x="370" y="60" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6b6577">720 px</text>
+<rect x="325" y="80" width="90" height="130" rx="7" fill="none" stroke="#6b5b95" stroke-width="3"/>
+<circle cx="370" cy="198" r="4" fill="#6b5b95"/>
+<text x="620" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#2f2a3a" font-weight="600">Desktop</text>
+<text x="620" y="60" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6b6577">940 px</text>
+<rect x="555" y="82" width="130" height="90" rx="3" fill="none" stroke="#6b5b95" stroke-width="3"/>
+<rect x="602" y="178" width="36" height="8" fill="#6b5b95"/>
+<rect x="580" y="186" width="80" height="4" fill="#6b5b95"/>
+<line x1="565" y1="170" x2="675" y2="90" stroke="#6b5b95" stroke-width="1.5"/>
+<text x="880" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#2f2a3a" font-weight="600">Large</text>
+<text x="880" y="60" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6b6577">1140 px</text>
+<rect x="815" y="82" width="130" height="90" rx="3" fill="none" stroke="#6b5b95" stroke-width="3"/>
+<rect x="862" y="178" width="36" height="8" fill="#6b5b95"/>
+<rect x="840" y="186" width="80" height="4" fill="#6b5b95"/>
+<line x1="825" y1="170" x2="935" y2="90" stroke="#6b5b95" stroke-width="1.5"/>
+</svg>

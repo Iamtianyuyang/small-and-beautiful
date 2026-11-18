@@ -45,9 +45,19 @@ skills/
     SKILL.md
   sab-grid-design/
     SKILL.md
+    assets/
+      templates/    SVG 12-column overlays
+      diagrams/     SVG canvas and span diagrams
+    evals/
+    references/
+      source-notes.md
+assets/
+  grid-design-source/   original PSD templates and GIF diagrams
 ```
 
 `SKILL.md` is the entry point. Reference files hold longer checklists and load only when the skill links to them.
+
+`sab-grid-design` ships SVG versions of the grid-design templates so the skill stays small and inspectable; the original PSD and GIF files are kept in `assets/grid-design-source/` for reference and are not copied into the skill on install.
 
 ## Adding a skill
 

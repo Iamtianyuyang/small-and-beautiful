@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Northwind Analytics</title>
+<style>
+  :root { --ink:#18202f; --muted:#5f6b80; --line:#e4e8ef; --accent:#2f6fed; --tint:#eef3ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#f4f6fa; color:var(--ink); font:15px/1.5 system-ui, -apple-system, sans-serif; }
+  .shell { width:940px; margin:0 auto; background:#fff; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:22px 20px; border-bottom:1px solid var(--line); }
+  .brand { font-weight:700; letter-spacing:-.01em; }
+  nav a { margin-left:22px; color:var(--muted); text-decoration:none; }
+  .hero { width:900px; margin:32px 0 0 20px; padding:28px 32px; background:var(--tint); border-radius:12px; }
+  .hero h1 { margin:0 0 8px; font-size:30px; }
+  .hero p { margin:0; color:var(--muted); max-width:560px; }
+  .plans { display:flex; gap:20px; padding:28px 20px 8px; }
+  .plan { width:300px; padding:24px; border:1px solid var(--line); border-radius:12px; }
+  .plan--featured { width:296px; border-color:var(--accent); box-shadow:0 6px 18px rgba(47,111,237,.12); }
+  .plan h2 { margin:0 0 4px; font-size:18px; }
+  .plan .price { font-size:32px; font-weight:700; margin:8px 0 12px; }
+  .plan ul { margin:0 0 20px; padding-left:18px; color:var(--muted); }
+  .plan button { width:100%; padding:10px 14px; border:0; border-radius:8px; background:var(--accent); color:#fff; font:inherit; }
+  .stats { display:flex; gap:16px; padding:24px 20px; }
+  .stat { width:220px; padding:16px; background:#f8fafc; border-radius:10px; }
+  .stat strong { display:block; font-size:22px; }
+  .stat span { color:var(--muted); font-size:13px; }
+  .content { display:flex; gap:20px; padding:8px 20px 40px; }
+  .main { width:620px; }
+  .main h2 { margin:0 0 12px; font-size:20px; }
+  .main p { color:var(--muted); }
+  .sidebar { width:280px; padding:18px; background:#f8fafc; border-radius:10px; align-self:flex-start; }
+  .sidebar h3 { margin:0 0 10px; font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .badge-list { display:flex; gap:8px; }
+  .badge { width:20%; padding:6px 0; border-radius:6px; background:#e7edf7; color:#33415c; font-size:12px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <span class="brand">Northwind Analytics</span>
+    <nav>
+      <a href="#">Product</a>
+      <a href="#">Pricing</a>
+      <a href="#">Docs</a>
+      <a href="#">Sign in</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Plans that scale with your team</h1>
+    <p>Start on the free tier, add seats as you grow, and move to annual billing when procurement asks for it.</p>
+  </section>
+
+  <section class="plans">
+    <article class="plan">
+      <h2>Starter</h2>
+      <div class="price">$0</div>
+      <ul>
+        <li>3 dashboards</li>
+        <li>7-day history</li>
+        <li>Community support</li>
+      </ul>
+      <button type="button">Start free</button>
+    </article>
+    <article class="plan">
+      <h2>Team</h2>
+      <div class="price">$29</div>
+      <ul>
+        <li>Unlimited dashboards</li>
+        <li>12-month history</li>
+        <li>Email support</li>
+      </ul>
+      <button type="button">Choose Team</button>
+    </article>
+    <article class="plan plan--featured">
+      <h2>Business</h2>
+      <div class="price">$99</div>
+      <ul>
+        <li>SSO and audit log</li>
+        <li>3-year history</li>
+        <li>Priority support</li>
+      </ul>
+      <button type="button">Talk to sales</button>
+    </article>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><strong>12k</strong><span>teams onboarded</span></div>
+    <div class="stat"><strong>99.95%</strong><span>uptime last quarter</span></div>
+    <div class="stat"><strong>38 ms</strong><span>median query time</span></div>
+    <div class="stat"><strong>24/7</strong><span>incident coverage</span></div>
+  </section>
+
+  <div class="content">
+    <main class="main">
+      <h2>What every plan includes</h2>
+      <p>All plans share the same ingestion pipeline, role-based access, and export API. Limits differ only in retention, seats, and support response time. Annual billing saves two months; invoices can be paid by card or bank transfer.</p>
+      <p>Usage is metered per active dashboard editor. Viewers are free on every plan, so sharing a read-only dashboard with the whole company does not change the bill.</p>
+      <p>Need a custom data residency region or a signed DPA? Business plans include both; contact sales with your procurement timeline.</p>
+    </main>
+    <aside class="sidebar">
+      <h3>Included</h3>
+      <div class="badge-list">
+        <span class="badge">SSO</span>
+        <span class="badge">API</span>
+        <span class="badge">Audit</span>
+        <span class="badge">Exports</span>
+        <span class="badge">Alerts</span>
+      </div>
+    </aside>
+  </div>
+</div>
+</body>
+</html>
