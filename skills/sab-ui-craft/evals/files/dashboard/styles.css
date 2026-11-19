@@ -1,0 +1,75 @@
+/* Three card systems bolted together: blue (8px), purple (4px bordered), green (16px shadowed). */
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #2b2b2b;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 18px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo { font-weight: 700; font-size: 15px; }
+.range { font-size: 13px; color: #777; }
+
+main { padding: 16px 18px 28px; }
+
+/* --- card system A: blue, soft, 8px --- */
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.metric-a, .metric-b, .metric-c { padding: 12px; }
+.metric-a { background: #eff6ff; border-radius: 8px; }
+.metric-label { font-size: 12px; color: #2563eb; text-transform: uppercase; letter-spacing: .04em; }
+.metric-value { font-size: 27px; font-weight: 700; margin: 6px 0 2px; }
+.metric-delta { font-size: 12px; }
+.metric-delta.up { color: #15803d; }
+
+/* --- card system B: purple, 4px, hard border, no fill --- */
+.metric-b { background: #fff; border: 1px solid #d8c9f5; border-radius: 4px; }
+.metric-title { font-size: 13px; color: #6d28d9; font-weight: 600; }
+.metric-number { font-size: 25px; font-family: Georgia, serif; margin: 10px 0 6px; }
+.metric-change { font-size: 11px; color: #6d28d9; }
+
+/* --- card system C: green, 16px, shadow, different type scale --- */
+.metric-c { background: #fff; border-radius: 16px; box-shadow: 0 6px 18px rgba(5, 150, 105, .16); padding: 18px; }
+.metric-caption { font-size: 14px; color: #059669; }
+.metric-figure { font-size: 30px; font-weight: 300; margin: 4px 0; }
+.metric-sub { font-size: 12px; color: #4b5563; }
+
+/* --- panels: three more visual languages --- */
+.panels { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 18px; margin-top: 22px; }
+.panel { padding: 16px; }
+.panel-blue { background: #1d4ed8; color: #fff; border-radius: 10px; }
+.panel-blue h2 { margin: 0 0 12px; font-size: 16px; font-weight: 600; }
+.bars { list-style: none; margin: 0; padding: 0; }
+.bars li { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; font-size: 12px; }
+.bars b { display: block; height: 10px; background: #93c5fd; color: #1e3a8a; font-size: 10px; line-height: 10px; padding-left: 4px; }
+
+.panel-purple { background: #faf5ff; border: 2px solid #e9d5ff; border-radius: 3px; }
+.panel-purple h3 { margin: 0 0 8px; font-size: 15px; color: #581c87; }
+.panel-purple table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.panel-purple td { padding: 7px 4px; border-bottom: 1px dashed #e9d5ff; }
+.cta { border: 0; cursor: pointer; }
+.cta-purple { margin-top: 12px; padding: 8px 14px; background: #7e22ce; color: #fff; border-radius: 999px; font-size: 12px; }
+
+.panel-green { background: #f0fdf4; border-radius: 14px; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; }
+.panel-head h4 { margin: 0; font-size: 14px; color: #065f46; }
+.panel-head a { font-size: 12px; color: #047857; }
+.activity { margin: 12px 0; }
+.event { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 6px 0; }
+.event time { margin-left: auto; color: #6b7280; font-size: 11px; }
+.dot { width: 7px; height: 7px; background: #10b981; border-radius: 50%; }
+.cta-green { padding: 6px 10px; background: #fff; border: 1px solid #10b981; color: #047857; border-radius: 6px; font-size: 12px; }
+
+/* --- filters: yet another spacing rhythm (6/10/14/18/22) --- */
+.filters { display: flex; align-items: center; gap: 6px; margin-top: 22px; padding: 10px 12px; border: 1px solid #eee; border-radius: 8px; }
+.filters label { font-size: 12px; color: #666; display: flex; gap: 6px; align-items: center; }
+.filters select { padding: 5px 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 12px; }
+.apply { margin-left: auto; padding: 7px 16px; background: #111827; color: #fff; border: 0; border-radius: 3px; font-size: 12px; }
+.reset { padding: 7px 12px; background: none; border: 0; color: #2563eb; text-decoration: underline; font-size: 12px; }

@@ -3,13 +3,17 @@ name: small-and-beautiful
 description: Small-and-beautiful product principles for personal apps and tools. Use for scoping, UI/UX, copy, dependencies, and product review.
 version: 1.1.0
 metadata:
-  author: "tianyy <Iamtianyuyang@users.noreply.github.com>"
+  author: "tianyy"
   tags: [design, ui, product, chinese-typography]
 ---
 
 # Small and Beautiful · Software Principles
 
 > One sentence: **Do one thing, and make it so good people can't resist screenshotting it.**
+
+## Purpose
+
+Help an agent scope, design, and review small software products using the ten principles, the dense-interface adjustments, and the two checklists. Use it when deciding what to build, writing UI copy, choosing dependencies, or reviewing a product before release.
 
 ## Scope (read this first)
 
@@ -25,6 +29,20 @@ For lightweight products built for individuals: mobile apps, small tools, landin
 | Touch 44×44 | Mouse-only: 24×24 only for low-frequency secondary icons; high-frequency controls ≥32×32; mixed input follows touch |
 
 For multi-user dense tools: handle concurrent edits with an optimistic 409 conflict, and mask PII (phone, address) in list rows.
+
+## Prerequisites
+
+- The product's target user and core task, or enough context to infer them.
+- For reviews: the interface, screenshots, or code being reviewed; a running build is better than a static screenshot.
+- For dense interfaces: which of the four defaults are being adjusted, and why.
+- No external tools or dependencies are required.
+
+## Limitations
+
+- The defaults target individual, consumer-style products; back-office, data-dense, and multi-user tools need the documented adjustments.
+- It is a design judgment guide, not a full accessibility audit, brand identity system, or platform HIG replacement.
+- It cannot verify visual results without screenshots or a running build.
+- It does not cover backend architecture, security review, or performance profiling beyond the stated budgets.
 
 ## Three influences
 
@@ -121,3 +139,13 @@ A user asks for a "reminder time" setting. Judgment: it is changed once a week; 
 - **Apple**: can this be removed?
 - **Smartisan**: will the user smile when they get here?
 - **Meizu**: can this be lighter and quieter?
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| Advice sounds like a restatement of the principles | No product-specific judgment | State the judgment and the reason for this product first, then cite the principle |
+| The review lists dozens of fixes | Scope too wide | Rank by user impact; prefer remove and simplify before add |
+| Recommendations contradict each other | Rules defined in several places | Run the consistency self-check: each rule defined once |
+| A dense interface needs different defaults | The four defaults assume touch-first consumer UI | Apply the dense-interface table and say which defaults changed and why |
+| Chinese text looks loose or misaligned | No CJK typesetting rules applied | Use the font stack, spacing between CJK and Latin, full-width punctuation; never justify |

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Account settings</title>
+<style>
+  :root { --blue: #2563eb; }
+  body { margin: 0; font: 13px/1.4 Arial, sans-serif; color: #333; background: #fff; }
+  .topbar { height: 44px; border-bottom: 1px solid #d9d9d9; background: #f5f5f5; display: flex; align-items: center; padding: 0 12px; gap: 10px; }
+  .topbar .brand { font-weight: 700; font-size: 14px; color: #222; }
+  .topbar .crumb { color: #888; font-size: 12px; }
+  .layout { display: grid; grid-template-columns: 180px 1fr; min-height: calc(100vh - 44px); }
+  .sidenav { border-right: 1px solid #e3e3e3; padding: 10px 0; background: #fafafa; }
+  .sidenav a { display: block; padding: 7px 12px; color: #444; text-decoration: none; font-size: 13px; border-left: 3px solid transparent; }
+  .sidenav a.active { border-left-color: var(--blue); background: #eef3ff; color: var(--blue); font-weight: 600; }
+  .content { padding: 14px 18px; }
+  h1 { font-size: 18px; margin: 4px 0 14px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #777; margin: 18px 0 8px; }
+  .row { display: grid; grid-template-columns: 160px 1fr 220px; gap: 8px; align-items: center; padding: 8px 0; border-bottom: 1px solid #e6e6e6; }
+  .row:last-child { border-bottom: 0; }
+  .label { color: #555; font-size: 12px; }
+  .value { font-size: 13px; color: #222; }
+  .hint { font-size: 11px; color: #999; }
+  input[type=text], select { width: 100%; padding: 5px 7px; border: 1px solid #c8c8c8; border-radius: 4px; font-size: 13px; }
+  .btn { padding: 5px 12px; border-radius: 4px; border: 1px solid #c8c8c8; background: #f5f5f5; font-size: 12px; cursor: pointer; }
+  .btn-primary { background: var(--blue); border-color: var(--blue); color: #fff; border-radius: 6px; }
+  .btn-danger { background: #fff; border-color: #d43f3a; color: #d43f3a; border-radius: 10px; }
+  .btn-link { background: none; border: 0; color: var(--blue); text-decoration: underline; padding: 0; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .card { border: 1px solid #ddd; border-radius: 6px; padding: 10px; }
+  .card h3 { margin: 0 0 6px; font-size: 13px; }
+  .tag { display: inline-block; padding: 1px 6px; background: #eee; border-radius: 3px; font-size: 11px; color: #666; }
+  .toolbar { display: flex; gap: 6px; justify-content: flex-end; padding: 10px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; }
+  th { background: #f7f7f7; color: #666; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">Acme Admin</span>
+    <span class="crumb">Workspace / Settings / Account</span>
+    <span style="margin-left:auto"><a href="#" style="font-size:12px;color:#2563eb">Help</a></span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#">Overview</a>
+      <a class="active" href="#">Account</a>
+      <a href="#">Members</a>
+      <a href="#">Billing</a>
+      <a href="#">Integrations</a>
+      <a href="#">Audit log</a>
+    </nav>
+    <main class="content">
+      <h1>Account settings</h1>
+      <p class="hint">Manage workspace identity, defaults, and access.</p>
+
+      <h2>Profile</h2>
+      <div class="row"><span class="label">Workspace name</span><span class="value">Acme Production</span><span class="hint">Shown in invite emails</span></div>
+      <div class="row"><span class="label">Workspace ID</span><span class="value">ws_8f3a21</span><span class="hint">Read-only</span></div>
+      <div class="row"><span class="label">Owner</span><span class="value">tianyy@example.com</span><span class="hint">Transfer requires support</span></div>
+      <div class="row"><span class="label">Region</span><span class="value">eu-central-1</span><span class="hint">Cannot be changed after creation</span></div>
+
+      <h2>Defaults</h2>
+      <div class="row"><span class="label">Default role</span><span class="value"><select><option>Editor</option><option>Viewer</option><option>Admin</option></select></span><span class="hint">Applied to invited members</span></div>
+      <div class="row"><span class="label">Session timeout</span><span class="value"><input type="text" value="30 minutes"></span><span class="hint">Enter a duration</span></div>
+      <div class="row"><span class="label">Time zone</span><span class="value"><input type="text" value="UTC+08:00"></span><span class="hint">Used in audit log</span></div>
+      <div class="row"><span class="label">Date format</span><span class="value"><select><option>YYYY-MM-DD</option><option>DD/MM/YYYY</option><option>MM/DD/YYYY</option></select></span><span class="hint">Applies to exports</span></div>
+
+      <h2>Security</h2>
+      <div class="row"><span class="label">Two-factor auth</span><span class="value">Required for admins <span class="tag">enforced</span></span><span class="hint">Cannot be disabled</span></div>
+      <div class="row"><span class="label">Allowed domains</span><span class="value"><input type="text" value="example.com, acme.io"></span><span class="hint">Comma separated</span></div>
+      <div class="row"><span class="label">API keys</span><span class="value">3 active keys</span><span class="hint"><button class="btn-link">Manage</button></span></div>
+
+      <h2>Danger zone</h2>
+      <div class="row"><span class="label">Delete workspace</span><span class="value">Deletes all projects, members, and billing history.</span><span class="hint"><button class="btn-danger">Delete workspace</button></span></div>
+
+      <div class="toolbar">
+        <button class="btn">Cancel</button>
+        <button class="btn">Reset to defaults</button>
+        <button class="btn-primary">Save changes</button>
+        <button class="btn btn-danger">Discard all</button>
+      </div>
+
+      <h2>Members</h2>
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Last active</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Tianyy Yang</td><td>tianyy@example.com</td><td>Owner</td><td><span class="tag">active</span></td><td>2 min ago</td><td><button class="btn-link">Edit</button></td></tr>
+          <tr><td>Li Wei</td><td>li.wei@example.com</td><td>Editor</td><td><span class="tag">active</span></td><td>1 hour ago</td><td><button class="btn-link">Edit</button></td></tr>
+          <tr><td>Wang Fang</td><td>wang.fang@example.com</td><td>Viewer</td><td><span class="tag">invited</span></td><td>—</td><td><button class="btn-link">Edit</button></td></tr>
+        </tbody>
+      </table>
+
+      <div class="grid3" style="margin-top:14px">
+        <div class="card"><h3>Seats</h3><div>12 of 20 used</div><button class="btn" style="margin-top:8px">Buy seats</button></div>
+        <div class="card"><h3>Storage</h3><div>4.2 GB of 10 GB</div><button class="btn" style="margin-top:8px">Upgrade</button></div>
+        <div class="card"><h3>API usage</h3><div>18,204 calls this month</div><button class="btn" style="margin-top:8px">View logs</button></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

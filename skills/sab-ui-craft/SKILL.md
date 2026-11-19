@@ -1,9 +1,9 @@
 ---
 name: sab-ui-craft
-description: "Review, design, and polish web or desktop UI: hierarchy, spacing, type, color, states, and product UI design systems. Use for UI/UX review, visual polish, UI refactors, screenshot-based improvements, and new product UI; can review only or modify code when asked. Not for backend-only, UI-less, brand/logo design, pure logic bug fixes, or motion-only work."
+description: "UI/UX review, design, and visual polish for web or desktop apps: hierarchy, spacing, type, color, states, and design systems. Use for screenshot critique, UI refactors, and new product UI."
 version: 1.0.0
 metadata:
-  author: "tianyy <Iamtianyuyang@users.noreply.github.com>"
+  author: "tianyy"
   tags: [ui, design, review, frontend]
 ---
 
@@ -46,8 +46,9 @@ If the user moves from review to implementation mid-conversation, restate the fi
 3. **Function over decoration.** Never trade readability, keyboard access, contrast, layout stability, or performance for a "premium" look.
 4. **Delete and unify first.** Remove duplicate entry points, meaningless dividers, extra labels, and placeholder decoration before considering new elements.
 5. **Avoid rewrites.** Reuse the project's layout, design tokens, components, and icons; do not add a new UI library or animation dependency unless genuinely necessary.
-6. **Handle complete states.** Do not polish only the default screenshot; cover loading, empty, error, disabled, hover, focus, selected, and narrow-screen states.
+6. **Handle complete states.** Do not polish only the default screenshot; cover loading, empty, error, disabled, hover, focus, selected, and narrow-screen states. For a screen with content that loads or can fail, **empty, loading, error, and success are all required**; empty and error alone are incomplete.
 7. **No fake interactions.** Buttons, tabs, settings entries, and navigation must have a clear behavior; never keep something that looks clickable but does nothing.
+8. **Obey the brief's hard constraints.** When the request names limits (one accent, a feature count, file scope, states, no browser), restate them before building and check each against the result. "One accent" means one hue family across icon tiles, badges, charts, and states; per-category tints are extra accents unless the brief allows them. Report each constraint as met or not met.
 
 ## Instructions
 
@@ -143,7 +144,7 @@ When there is no existing UI, use this sequence instead of steps 1–5:
 1. **Define the job.** Write one sentence for the primary user, the primary task, and the single most important action. If the user cannot state them, propose a one-sentence draft and ask for correction.
 2. **Choose the screen shape.** Pick one primary screen and at most one secondary screen. List the 3 core features for v1 and explicitly park the rest.
 3. **Set the minimum system.** Define 3–5 spacing steps, 2–3 radii, 3 text levels, one accent, and the page/content surfaces. Start from platform defaults; add a UI library only when the project already uses one.
-4. **Build the complete slice.** Implement the primary task end to end, including empty, loading, error, disabled, and narrow-screen states. Do not add settings, themes, or onboarding until the core task works.
+4. **Build the complete slice.** Implement the primary task end to end, including empty, loading, error, success, disabled, and narrow-screen states. Every required state needs a visible state and real copy, not a code path the user never sees. Do not add settings, themes, or onboarding until the core task works.
 5. **Verify.** Run step 6 on the new screens. If the task cannot be completed without explanation, cut features before adding UI.
 
 ## Output format
@@ -164,6 +165,7 @@ Report:
 
 - **Findings**: key UI problems and their evidence.
 - **Changes**: files and change points, especially what was deleted.
+- **Change ledger**: for every visual rule you changed, write the exact old value → new value (`--radius: 10px → 6px`, `#7b8077 → #5f665c`, `12/14/18 → 13/15/20`). Do not describe a change with adjectives alone; if you cannot name the old and new values, you did not make a checkable change.
 - **Verification**: commands run, pages viewed, states covered, and results.
 - **Remaining issues**: what is unresolved or cannot be verified.
 
@@ -176,7 +178,9 @@ Report:
 - **Task**: the primary user, task, and main action in one sentence.
 - **Scope**: the 3 core features and what was explicitly parked.
 - **Screens**: the primary screen and any secondary screen.
-- **System**: the spacing, type, radius, and color decisions, and why they fit this product.
+- **System**: the spacing, type, radius, and color decisions, and why they fit this product. Name the actual values (spacing steps, type sizes, radii, accent hex).
+- **States**: each required state with the copy it shows; say explicitly if a state is missing.
+- **Constraints**: each hard constraint from the brief, marked met or not met with the evidence.
 - **Verification**: screens and states checked, and what could not be verified.
 
 ## Examples
@@ -244,6 +248,8 @@ Report:
 - Putting a border or card around every region until the page looks like a component gallery.
 - Treating reading areas and tool areas the same, so every panel has equal visual weight.
 - Shrinking text and lowering contrast to create "lightness".
+- Giving every category, icon tile, or badge its own tint while claiming one accent; that is a multi-accent palette with a dominant color.
+- Reporting a polish pass with "cleaner", "more consistent", or "unified" while the summary names no old value, new value, or file.
 - Hiding necessary information for "minimalism" until users cannot find features.
 - Making an unfinished state or button prettier without verifying what it actually does.
 - Declaring a framework, font, or technique the root cause from a screenshot alone; do not conclude without evidence.

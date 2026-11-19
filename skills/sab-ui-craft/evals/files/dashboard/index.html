@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Revenue dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <span class="logo">Acme Analytics</span>
+    <span class="range">Last 30 days</span>
+  </header>
+
+  <main>
+    <section class="metrics">
+      <div class="metric metric-a">
+        <div class="metric-label">Monthly revenue</div>
+        <div class="metric-value">$128,400</div>
+        <div class="metric-delta up">+12.4% vs last month</div>
+      </div>
+      <div class="metric metric-b">
+        <div class="metric-title">Active customers</div>
+        <div class="metric-number">2,318</div>
+        <div class="metric-change">+86 new</div>
+      </div>
+      <div class="metric metric-c">
+        <div class="metric-caption">Churn rate</div>
+        <div class="metric-figure">1.8%</div>
+        <div class="metric-sub">down 0.3 pts</div>
+      </div>
+    </section>
+
+    <section class="panels">
+      <div class="panel panel-blue">
+        <h2>Revenue by plan</h2>
+        <ul class="bars">
+          <li><span>Starter</span><b style="width:38%">38%</b></li>
+          <li><span>Team</span><b style="width:44%">44%</b></li>
+          <li><span>Enterprise</span><b style="width:18%">18%</b></li>
+        </ul>
+      </div>
+
+      <div class="panel panel-purple">
+        <h3>Top accounts</h3>
+        <table>
+          <tr><td>Northwind</td><td>$21,400</td></tr>
+          <tr><td>Globex</td><td>$18,900</td></tr>
+          <tr><td>Initech</td><td>$12,300</td></tr>
+          <tr><td>Umbrella</td><td>$9,800</td></tr>
+        </table>
+        <button class="cta cta-purple">View all accounts</button>
+      </div>
+
+      <div class="panel panel-green">
+        <header class="panel-head"><h4>Recent activity</h4><a href="#">See history</a></header>
+        <div class="activity">
+          <div class="event"><span class="dot"></span>Northwind upgraded to Enterprise <time>2h</time></div>
+          <div class="event"><span class="dot"></span>Globex added 12 seats <time>5h</time></div>
+          <div class="event"><span class="dot"></span>Initech invoice paid <time>1d</time></div>
+        </div>
+        <button class="cta cta-green">Export CSV</button>
+      </div>
+    </section>
+
+    <section class="filters">
+      <label>Segment <select><option>All</option><option>Enterprise</option><option>Team</option></select></label>
+      <label>Region <select><option>All</option><option>EU</option><option>US</option></select></label>
+      <button class="apply">Apply filters</button>
+      <button class="reset">Reset</button>
+    </section>
+  </main>
+</body>
+</html>

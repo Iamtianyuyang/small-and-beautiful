@@ -1,0 +1,58 @@
+{
+  "skill_name": "sab-ui-craft",
+  "evals": [
+    {
+      "id": "explicit-review",
+      "prompt": "Our settings page looks like an admin panel. The source is /workspace/input/settings-page.html. Review the UI and tell me what makes it feel that way, with concrete fixes. Do not change code yet.",
+      "expected_output": "A UI/UX review that names specific causes in this page (flat label/value rows, dividers, mixed corner radii on buttons, competing actions in the toolbar), proposes concrete changes with values, and stays in review mode without editing code.",
+      "assertions": [
+        "Names at least three specific causes that are visible in settings-page.html, not generic principles",
+        "Proposes concrete values or replacements (spacing, type scale, radii, color) for the problems it names",
+        "Does not modify settings-page.html"
+      ],
+      "expected_skill": "sab-ui-craft",
+      "files": [
+        "files/settings-page.html"
+      ]
+    },
+    {
+      "id": "implicit-polish",
+      "prompt": "The dashboard in /workspace/input/dashboard looks like components bolted together from three different apps. Make the visual system coherent. Edit the files in place and tell me what you changed.",
+      "expected_output": "The dashboard files are edited to share one spacing scale, one type scale, one accent color, and one radius set; the reply names which conflicting values were replaced.",
+      "assertions": [
+        "Edits /workspace/input/dashboard/styles.css so the three metric cards and three panels share one radius set and one accent color",
+        "Replaces the mixed spacing and font sizes with a stated scale rather than adding more one-off values",
+        "Explains which existing values conflicted and what they became"
+      ],
+      "expected_skill": "sab-ui-craft",
+      "files": [
+        "files/dashboard"
+      ]
+    },
+    {
+      "id": "new-build",
+      "prompt": "We're building a small iOS habit tracker. Design the main screen with one accent color, a consistent spacing scale, and exactly these four states: empty, loading, error, success, each with real copy. Keep it to one core task and at most three features. Write the single-screen design to /workspace/input/habit-tracker/index.html in one file. Do not launch a browser, take screenshots, or install tooling. In your final summary, list the accent color, the spacing scale, the four states, and the three features.",
+      "expected_output": "A single-screen design for one core task with one accent color, a consistent spacing scale, all four states (empty, loading, error, success) with real copy, and no more than three core features; the final summary lists those choices.",
+      "assertions": [
+        "Creates /workspace/input/habit-tracker/index.html with the main screen",
+        "The summary names one accent color and a spacing scale, and the styles use them",
+        "The file and summary include empty, loading, error, and success states with real copy",
+        "The screen has one core task and at most three features"
+      ],
+      "expected_skill": "sab-ui-craft"
+    },
+    {
+      "id": "negative-backend-bug",
+      "prompt": "Fix the null pointer exception in /workspace/input/billing.py when an invoice has no line items.",
+      "expected_output": "A backend fix for the null pointer exception; no UI or visual design guidance.",
+      "assertions": [
+        "Fixes invoice_total to handle a missing or null line_items value",
+        "Does not give UI or visual design advice"
+      ],
+      "expected_skill": null,
+      "files": [
+        "files/billing.py"
+      ]
+    }
+  ]
+}
