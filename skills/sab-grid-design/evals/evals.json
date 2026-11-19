@@ -1,0 +1,55 @@
+{
+  "skill_name": "sab-grid-design",
+  "evals": [
+    {
+      "id": "explicit-review",
+      "prompt": "Our pricing page at /workspace/input/pricing-page.html is built at a fixed 940 px width and the cards do not line up. Review it against a 12-column grid: name the blocks that are off-grid with their measured widths, show why each row fails, and give the smallest fixes. Do not edit the file.",
+      "expected_output": "A layout review that names specific off-grid blocks and pixel widths from pricing-page.html (the 300/300/296 px plan cards, the 620 + 280 px content row, the four 220 px stats, the five 20%-wide badges), shows why each named row does not total 12 columns or land on column lines, and proposes whole-column spans with one shared gutter and margin. The 900 px hero is on-grid (940 px page minus 20 px margins) and may correctly be left alone. The file is not modified.",
+      "assertions": [
+        "Names at least three of the four off-grid groups (plan cards, content row, stats, badges) with their pixel widths from pricing-page.html",
+        "Explains why each named row or block fails the grid (row does not total 12 columns, width is not a whole-column span, or block is offset from the column lines)",
+        "Proposes whole-column spans and a shared gutter or margin instead of new fixed pixel widths",
+        "Does not modify pricing-page.html"
+      ],
+      "expected_skill": "sab-grid-design",
+      "files": ["files/pricing-page.html"]
+    },
+    {
+      "id": "implicit-responsive",
+      "prompt": "The dashboard in /workspace/input/dashboard-fixed/ is a 1200 px fixed-width page and breaks on smaller screens. Make it responsive on a 12-column grid without building separate pages. Edit the files in place and tell me the breakpoints and the column spans you used. Please do not delete any files or temp directories as part of the work.",
+      "expected_output": "The dashboard is edited in place to a 12-column grid: the sidebar, main column, and metric cards get column spans, every visible row totals 12, at most four breakpoints are used, and the reply states the breakpoints and the span table.",
+      "assertions": [
+        "Edits index.html and/or styles.css in /workspace/input/dashboard-fixed/ to define a 12-column grid",
+        "Assigns column spans to the sidebar, main column, and metric cards at each breakpoint, with every visible row totaling 12",
+        "Uses at most four breakpoints and one page rather than a separate layout per width",
+        "The reply names the breakpoints and the column spans used"
+      ],
+      "expected_skill": "sab-grid-design",
+      "files": ["files/dashboard-fixed"]
+    },
+    {
+      "id": "contextual-bootstrap",
+      "prompt": "This settings page is part of a Bootstrap 5 app, and the app's grid is already in use. Lay out /workspace/input/bootstrap-settings/index.html on that grid: the form sections should reflow into two columns on medium screens, and the sidebar should stack above the main content on phones. Edit the page in place and say which breakpoints you used.",
+      "expected_output": "The settings page is edited to use Bootstrap's own 12-column classes and breakpoints (for example row plus col-12/col-md-6/col-md-3/col-md-9), the sections reflow into two columns at the medium breakpoint, and the sidebar stacks at the phone width. No second grid or design-canvas widths are introduced.",
+      "assertions": [
+        "Edits index.html to use Bootstrap grid classes (row and col-*) for the sidebar and form sections",
+        "The sidebar stacks above the main content at the phone width and the form sections reflow to two columns at the medium breakpoint",
+        "Does not introduce the 750 / 720 / 940 / 1140 design canvases or a second custom grid",
+        "The reply names the Bootstrap breakpoints used"
+      ],
+      "expected_skill": "sab-grid-design",
+      "files": ["files/bootstrap-settings"]
+    },
+    {
+      "id": "negative-contrast",
+      "prompt": "The primary button in /workspace/input/theme.css uses white text on #f0a000 and fails WCAG AA. Fix the colors so it passes and report the contrast ratio. Do not change the layout.",
+      "expected_output": "theme.css is edited so the primary button's text and background meet WCAG AA (at least 4.5:1), and the reply reports the computed contrast ratio. No 12-column grid, breakpoint, or layout-width advice is given.",
+      "assertions": [
+        "Changes the primary button colors in theme.css to a pair that meets WCAG AA (at least 4.5:1) and reports the ratio",
+        "Does not give 12-column grid, breakpoint, or layout-width advice"
+      ],
+      "expected_skill": null,
+      "files": ["files/theme.css"]
+    }
+  ]
+}

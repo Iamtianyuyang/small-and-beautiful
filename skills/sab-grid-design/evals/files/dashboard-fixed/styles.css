@@ -1,0 +1,165 @@
+:root {
+  --bg: #f4f6fa;
+  --panel: #ffffff;
+  --ink: #18202f;
+  --muted: #5f6b80;
+  --line: #e4e8ef;
+  --accent: #2f6fed;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, sans-serif;
+}
+
+.app {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--panel);
+}
+
+.sidebar {
+  width: 300px;
+  padding: 28px 24px;
+  border-right: 1px solid var(--line);
+}
+
+.brand {
+  margin-bottom: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar nav a {
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.sidebar nav a.is-active {
+  background: #eef3ff;
+  color: var(--accent);
+}
+
+.main {
+  width: 880px;
+  padding: 28px 32px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.stage-badge {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.metrics {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.metric {
+  width: 280px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.metric__label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.metric strong {
+  display: block;
+  margin: 6px 0;
+  font-size: 26px;
+}
+
+.metric__delta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.metric__delta--bad {
+  color: #c2410c;
+}
+
+.panel {
+  margin-bottom: 28px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.deploys {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deploys li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.deploys li:last-child {
+  border-bottom: 0;
+}
+
+.deploys span {
+  color: var(--muted);
+}

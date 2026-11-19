@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="2006" viewBox="0 0 1180 2006">
+<rect width="1180" height="2006" fill="#ffffff"/>
+<text x="20" y="20" font-family="Inter, Arial, sans-serif" font-size="14" fill="#2f2a3a" font-weight="600">Four grid-design canvases</text>
+<text x="235" y="44" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2f2a3a">Phone · 750 px (2×)</text>
+<rect x="235" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="295.83" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="356.67" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="417.5" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="478.33" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="539.17" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="600" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="660.83" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="721.67" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="782.5" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="843.33" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="904.17" y="54" width="40.83" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="235" y="54" width="710" height="400" fill="none" stroke="#e8a7b4" stroke-width="1"/>
+<text x="250" y="538" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2f2a3a">Tablet · 720 px</text>
+<rect x="250" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="308.33" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="366.67" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="425" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="483.33" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="541.67" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="600" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="658.33" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="716.67" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="775" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="833.33" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="891.67" y="548" width="38.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="250" y="548" width="680" height="400" fill="none" stroke="#e8a7b4" stroke-width="1"/>
+<text x="140" y="1032" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2f2a3a">Desktop · 940 px</text>
+<rect x="140" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="216.67" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="293.33" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="370" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="446.67" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="523.33" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="600" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="676.67" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="753.33" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="830" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="906.67" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="983.33" y="1042" width="56.67" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="140" y="1042" width="900" height="400" fill="none" stroke="#e8a7b4" stroke-width="1"/>
+<text x="40" y="1526" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2f2a3a">Large desktop · 1140 px</text>
+<rect x="40" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="133.33" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="226.67" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="320" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="413.33" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="506.67" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="600" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="693.33" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="786.67" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="880" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="973.33" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="1066.67" y="1536" width="73.33" height="400" fill="#f6cdd4" opacity="0.75"/>
+<rect x="40" y="1536" width="1100" height="400" fill="none" stroke="#e8a7b4" stroke-width="1"/>
+</svg>
